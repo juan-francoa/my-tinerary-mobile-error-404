@@ -17,7 +17,7 @@ import {
 
 
 
-export default function Carrousel() {
+export default function Carrousel(props) {
   const scrollX = useRef(new Animated.Value(0)).current;
 
   const { width: windowWidth } = useWindowDimensions();
@@ -32,7 +32,9 @@ export default function Carrousel() {
 
   }, [])
 
-
+  const navigation = ()=>{
+    props.props.navigation.navigate("Cities")
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -89,6 +91,7 @@ export default function Carrousel() {
           })}
         </View>
       </View>
+      <Button title="Cities" onPress={navigation} />
     </SafeAreaView>
   );
 }
