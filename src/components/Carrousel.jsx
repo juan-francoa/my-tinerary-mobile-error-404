@@ -1,4 +1,5 @@
-import React, { useRef } from "react";
+import axios from "axios";
+import React, { useRef, useState, useEffect } from "react";
 import {
   SafeAreaView,
   ScrollView,
@@ -7,15 +8,31 @@ import {
   View,
   ImageBackground,
   Animated,
-  useWindowDimensions
+  useWindowDimensions,
+  Button,
+  Image,
+  Dimensions
 } from "react-native";
 
-const images = new Array(6).fill('https://images.unsplash.com/photo-1556740749-887f6717d7e4');
 
-export default function Carrousel(){
+
+
+export default function Carrousel() {
   const scrollX = useRef(new Animated.Value(0)).current;
 
   const { width: windowWidth } = useWindowDimensions();
+  let [images, setImg] = useState([])
+ 
+
+  useEffect(() => {
+    axios
+      .get('http://192.168.1.7:8000/api/cities')
+      .then(res => setImg(res.data.response))
+      .catch(res => console.log(res))
+
+  }, [])
+
+
 
   return (
     <SafeAreaView style={styles.container}>
@@ -41,10 +58,10 @@ export default function Carrousel(){
                 style={{ width: windowWidth, height: 250 }}
                 key={imageIndex}
               >
-                <ImageBackground source={{ uri: image }} style={styles.card}>
+                <ImageBackground source={{ uri: image.photo }} style={styles.card}>
                   <View style={styles.textContainer}>
                     <Text style={styles.infoText}>
-                      {"Image - " + imageIndex}
+                      {image.name}
                     </Text>
                   </View>
                 </ImageBackground>
@@ -75,7 +92,6 @@ export default function Carrousel(){
     </SafeAreaView>
   );
 }
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
