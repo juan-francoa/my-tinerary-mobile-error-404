@@ -43,8 +43,9 @@ export default function Cities(props) {
 
     }
     return (
-        <ImageBackground style={styles.img} source={require('../../public/img/imagenes/fondo5.jpg')}>
         <SafeAreaView>
+        <ImageBackground style={styles.img} source={require('../../public/img/imagenes/fondo5.jpg')}>
+
             <ScrollView>
                 <View>
                     <View style={styles.name}>
@@ -80,8 +81,9 @@ export default function Cities(props) {
                     {cities.length === 0 ? <Image source={require('../../public/img/imagenes/404_Error.gif')} /> : ""}
                 </View>
             </ScrollView>
-        </SafeAreaView>
         </ImageBackground>
+
+        </SafeAreaView>
     )
 }
 const styles = StyleSheet.create({
@@ -99,7 +101,6 @@ const styles = StyleSheet.create({
     infoText: {
         color: "white",
         textAlign: "center",
-        fontSize: 50,
     },
     input: {
         justifyContent: "center",
