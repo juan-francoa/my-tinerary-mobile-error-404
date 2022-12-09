@@ -7,7 +7,7 @@ const Stack = createNativeStackNavigator();
 export default function CitiesNavigation() {
     return (
             <Stack.Navigator>
-                <Stack.Screen name='Cities' component={Cities}/>
+                <Stack.Screen name='Cities' component={Cities} options={{ headerShown: false }}/>
             </Stack.Navigator>
     )
 }

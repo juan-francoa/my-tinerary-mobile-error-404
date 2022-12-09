@@ -7,7 +7,7 @@ const Stack = createNativeStackNavigator();
 export default function HotelsNavigation() {
     return (
             <Stack.Navigator>
-                <Stack.Screen name='Hotels' component={Hotels}/>
+                <Stack.Screen name='Hotels' component={Hotels} options={{ headerShown: false }}/>
             </Stack.Navigator>
     )
 }

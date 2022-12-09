@@ -1,13 +1,13 @@
 import React from 'react'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
-import Account from '../screens/Account'
+import DetailsCity from '../screens/DetailsCity';
 
 const Stack = createNativeStackNavigator();
 
-export default function AccountNavigation() {
+export default function CityNavigation() {
     return (
             <Stack.Navigator>
-                <Stack.Screen name='Account' component={Account} options={{ headerShown: false }}/>
+                <Stack.Screen name='DetailsCity' component={DetailsCity} options={{ headerShown: false }}/>
             </Stack.Navigator>
     )
 }

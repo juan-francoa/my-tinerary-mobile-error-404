@@ -91,7 +91,6 @@ export default function Carrousel(props) {
           })}
         </View>
       </View>
-      <Button title="Cities" onPress={navigation} />
     </SafeAreaView>
   );
 }

@@ -5,6 +5,7 @@ import HomeNavigation from './HomeNavigation';
 import CitiesNavigation from './CitiesNavigation';
 import HotelsNavigation from './HotelsNavigation';
 import AccountNavigation from './AccountNavigation';
+import CityNavigation from './CityNavigation';
 
 
 const Tab = createBottomTabNavigator();
@@ -38,6 +39,7 @@ export default function Navigation() {
           tabBarLabel: "Account",
           tabBarIcon: ({color, size}) => <Ionicons name='user' color={color} size={size} />
         }}/>
+      
       </Tab.Navigator>
   )
 }
