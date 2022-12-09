@@ -18,8 +18,8 @@ export default function CityCard(props) {
                 <Button 
                     onPress={NavigationContainer}
                     title="Enter"
-                    color="blue"
-                   
+                    color="white"
+                    fontWeight= "bold"
                 />
             </View>
         </View>
@@ -29,15 +29,14 @@ export default function CityCard(props) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        width: width * 0.9,
+        width: 350,
         height: 300,
         marginTop: 24,
         alignItems: 'center',
-        marginLeft: 20,
     },
     containerBody: {
         flex: 1,
-        justifyContent: 'flex-end',
+        justifyContent: 'center',
         alignItems: 'center',
         position: 'absolute',
         width: '100%',
@@ -51,13 +50,15 @@ const styles = StyleSheet.create({
         fontSize: 28,
         textAlign: 'center',
         marginBottom: 10,
-        fontWeight: "500"
+        fontWeight: "500",
+        justifyContent: "center"
     },
     img: {
         flex: 1,
         justifyContent: 'center',
         width: '100%',
         height: '100%',
-        borderRadius: 20,
+        borderRadius: 30,
+        boxShadow: '3px 2px 4px rgba(0,0,0,0.3)'
     },
 });

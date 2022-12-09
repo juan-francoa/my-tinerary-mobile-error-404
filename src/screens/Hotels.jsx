@@ -31,6 +31,7 @@ export default function Hotels() {
 
     }
     return (
+        <ImageBackground style={styles.img} source={require('../../public/img/imagenes/fondo4.jpg')}>
         <SafeAreaView>
             <ScrollView>
                 <View style={styles.name}>
@@ -53,18 +54,19 @@ export default function Hotels() {
                 </View>
             </ScrollView>
         </SafeAreaView>
+        </ImageBackground>
     )
 }
 
 const styles = StyleSheet.create({
     con: {
         alignItems: "center",
-        display: "flex"
+        display: "flex",
     },
     img: {
         flex: 1,
         paddingBottom: 40,
-
+        
     },
     cont: {
         height: 200,
@@ -76,7 +78,9 @@ const styles = StyleSheet.create({
     text: {
         textAlign: "center",
         fontSize: 20,
-        color: "white"
+        color: "white",
+        fontWeight: 'bold',
+        justifyContent: "center"
     },
     name: {
         alignItems: "center",
@@ -86,5 +90,7 @@ const styles = StyleSheet.create({
         margin: 12,
         borderWidth: 1,
         padding: 10,
+        color: "white",
+        borderColor: "white"
     },
 })

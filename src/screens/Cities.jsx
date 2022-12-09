@@ -43,6 +43,7 @@ export default function Cities(props) {
 
     }
     return (
+        <ImageBackground style={styles.img} source={require('../../public/img/imagenes/fondo5.jpg')}>
         <SafeAreaView>
             <ScrollView>
                 <View>
@@ -60,10 +61,10 @@ export default function Cities(props) {
                     {che.map(e =>{
                         return <BouncyCheckbox
                         size={25}
-                        fillColor="red"
+                        fillColor="black"
                         unfillColor="#FFFFFF"
                         text={e}
-                        iconStyle={{ borderColor: "red" }}
+                        iconStyle={{ borderColor: "black" }}
                         innerIconStyle={{ borderWidth: 2 }}
                         textStyle={{ fontFamily: "JosefinSans-Regular" }}
                 
@@ -74,22 +75,24 @@ export default function Cities(props) {
                     
                         
                                 {cities.map(city => <CityCard key={city._id} id={city._id} city={city} name={city.name} navigation={props.navigation} continent={city.continent} photo={city.photo} />)}
-                           
                         
                     
                     {cities.length === 0 ? <Image source={require('../../public/img/imagenes/404_Error.gif')} /> : ""}
                 </View>
             </ScrollView>
         </SafeAreaView>
+        </ImageBackground>
     )
 }
 const styles = StyleSheet.create({
     card: {
         flex: 1,
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        justifyItems: "center"
     },
     conten: {
+        justifyContent: "center",
         alignItems: "center",
         display: "flex"
     },
@@ -99,6 +102,7 @@ const styles = StyleSheet.create({
         fontSize: 50,
     },
     input: {
+        justifyContent: "center",
         height: 40,
         margin: 12,
         borderWidth: 1,
