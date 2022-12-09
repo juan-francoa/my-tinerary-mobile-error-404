@@ -26,7 +26,7 @@ export default function Carrousel(props) {
 
   useEffect(() => {
     axios
-      .get('http://192.168.1.7:8000/api/cities')
+      .get('https://back-error-404.up.railway.app/api/cities')
       .then(res => setImg(res.data.response))
       .catch(res => console.log(res))
 
