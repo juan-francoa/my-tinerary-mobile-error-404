@@ -18,7 +18,7 @@ export default function CityCard(props) {
                 <Button 
                     onPress={NavigationContainer}
                     title="Enter"
-                    color="white"
+                    color="blue"
                     fontWeight= "bold"
                 />
             </View>
