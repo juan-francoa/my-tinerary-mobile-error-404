@@ -10,7 +10,7 @@ export default function Account() {
   return (
     <ImageBackground style={styles.img} source={require('../../public/img/imagenes/fondo6.jpg')} >
     <View>
-      <SignUp/>
+      {auth ? <LoginForm/> : <SignUp/> }
     </View>
     </ImageBackground>
   );
